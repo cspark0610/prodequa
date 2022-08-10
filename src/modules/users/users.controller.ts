@@ -9,6 +9,7 @@ import {
   Param,
   Patch,
   Put,
+  Delete,
 } from '@nestjs/common';
 import { UserDto } from './dto/user.dto';
 import { UsersService } from './users.service';
@@ -54,5 +55,11 @@ export class UsersController {
   @HttpCode(HttpStatus.OK)
   async updateUser(@Body() userDto: UserDto) {
     return this.usersService.updateUser(userDto);
+  }
+
+  @Delete('/:dni')
+  @HttpCode(HttpStatus.OK)
+  async deleteUser(@Param('dni') dni: string) {
+    return this.usersService.deleteUser(dni);
   }
 }
