@@ -1,6 +1,16 @@
-import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Post,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { GetCurrentSession } from './decorators/current-session.decorator';
 import { AuthDto } from './dto/auth.dto';
+import { AccessTokenGuard } from './guards/access-token.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -16,5 +26,16 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   async signinLocal(@Body() authDto: AuthDto) {
     return this.authService.login(authDto);
+  }
+
+  @Get('/profile')
+  @HttpCode(HttpStatus.OK)
+  @UseGuards(AccessTokenGuard)
+  async getPtofile(
+    @GetCurrentSession('email') email: string,
+  ): Promise<{ [key: string]: string }> {
+    return {
+      loggedInEmail: email,
+    };
   }
 }

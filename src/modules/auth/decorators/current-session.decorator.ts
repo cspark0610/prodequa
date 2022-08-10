@@ -7,3 +7,12 @@ export const GetCurrentSession = createParamDecorator(
     return request.user[data];
   },
 );
+
+/*
+{
+  sub: '62f3a1f2c2ee7fd6963ee70b',
+  email: 'test3@gmail.com',
+  iat: 1660133945,
+  exp: 1660220345
+}
+*/

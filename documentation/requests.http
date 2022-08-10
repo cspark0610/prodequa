@@ -27,6 +27,15 @@ Content-Type: application/json
 #   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmYzYTA4Nzg3MjNmYzM4NGIwZWUyYzEiLCJlbWFpbCI6InRlc3QxQGdtYWlsLmNvbSIsImlhdCI6MTY2MDEzMzYyNSwiZXhwIjoxNjYwMjIwMDI1fQ.kmpTypRSk0nn_pQGBhFmCudykL1_k2BIJwlO3JCjEeA"
 # }
 
+### 2.2 profile
+GET {{endpoint}}/auth/profile
+Authorization: Bearer {{token}}
+
+### response example
+# {
+#   "loggedInEmail": "test3@gmail.com"
+# }
+
 ### USERS CONTROLLER
 ### 3. create user
 POST {{endpoint}}/users
