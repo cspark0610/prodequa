@@ -1,3 +1,19 @@
+### INSTRUCCIONES
+
+## 1. Instalar dependencias
+
+```bash
+$ yarn install
+```
+
+## 2. Levantar conexion local a mongoDB
+
+## 3. la documentacion del uso de los endpoints esta en "documentation/request.http", instalar la extension de VSC llamada REST Client para poder reutilizarlas.
+
+```bash
+https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+```
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
@@ -29,33 +45,20 @@
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn run start
 
 # watch mode
-$ npm run start:dev
+$ yarn run start:dev
 
 # production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ yarn run start:prod
 ```
 
 ## Support
