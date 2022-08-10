@@ -34,11 +34,11 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "firstName": "john",
-  "lastName": "doe",
-  "dni": "12345671",
-  "birthday": "1994-03-03",
-  "gender": "MASCULINE",
+  "firstName": "allison",
+  "lastName": "jones",
+  "dni": "12345670",
+  "birthday": "1993-03-03",
+  "gender": "FEMENINE",
   "status": "SINGLE"
 }
 
@@ -168,20 +168,3 @@ Authorization: Bearer {{token}}
 #   "__v": 0
 # }
 
-### 9. delete user
-DELETE {{endpoint}}/users/12345670
-Authorization: Bearer {{token}}
-
-### response
-# {
-#   "_id": "62f3bab47b4bd5076a24357f",
-#   "userCode": 1,
-#   "firstName": "aliison",
-#   "lastName": "jones",
-#   "dni": 12345670,
-#   "birthday": "1993-03-03T00:00:00.000Z",
-#   "gender": "FEMENINE",
-#   "status": "MARRIED",
-#   "deleted": false,
-#   "__v": 0
-# }

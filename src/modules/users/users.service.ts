@@ -75,12 +75,4 @@ export class UsersService {
       { ...userDto, dni: this.parseDni(userDto.dni) },
     );
   }
-
-  async deleteUser(dni: string): Promise<User> {
-    const userExists = await this.usersRepository.findUserByDNI(dni);
-    if (!userExists) {
-      throw new ConflictException(` User with dni ${dni} not exists`);
-    }
-    return this.usersRepository.findOneAndDelete({ dni: this.parseDni(dni) });
-  }
 }
