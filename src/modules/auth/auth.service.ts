@@ -37,6 +37,7 @@ export class AuthService {
       password: hash,
     } as any);
     const token = await this.getToken(newAuthRecord._id, newAuthRecord.email);
+
     return token;
   }
 

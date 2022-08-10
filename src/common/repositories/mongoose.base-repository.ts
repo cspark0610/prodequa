@@ -4,11 +4,11 @@ export abstract class MongooseBaseRepository<T extends Document> {
   constructor(protected readonly model: Model<T>) {}
 
   async findOne(filterQuery: FilterQuery<T>): Promise<T> {
-    return this.model.findOne(filterQuery);
+    return this.model.findOne(filterQuery, { __v: 0 }, { lean: true });
   }
 
   async findById(id: string): Promise<T> {
-    return this.model.findById(id, { __v: 0 });
+    return this.model.findById(id, { __v: 0 }, { lean: true });
   }
 
   async find(filterQuery: FilterQuery<T>): Promise<T[]> {
