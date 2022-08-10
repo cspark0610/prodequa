@@ -1,0 +1,170 @@
+@endpoint=http://localhost:5500
+@email=test3@gmail.com
+@password=password3
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmYzYTFmMmMyZWU3ZmQ2OTYzZWU3MGIiLCJlbWFpbCI6InRlc3QzQGdtYWlsLmNvbSIsImlhdCI6MTY2MDEzMzk0NSwiZXhwIjoxNjYwMjIwMzQ1fQ.kFnl19Y83SyW5Um-n0sLiiYbK2yrix-tr-pqmnw7KUI
+
+
+### 1. Signup
+POST {{endpoint}}/auth/signup
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+### 2. login
+POST {{endpoint}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+### response example
+# {
+#   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmYzYTA4Nzg3MjNmYzM4NGIwZWUyYzEiLCJlbWFpbCI6InRlc3QxQGdtYWlsLmNvbSIsImlhdCI6MTY2MDEzMzYyNSwiZXhwIjoxNjYwMjIwMDI1fQ.kmpTypRSk0nn_pQGBhFmCudykL1_k2BIJwlO3JCjEeA"
+# }
+
+### USERS CONTROLLER
+### 3. create user
+POST {{endpoint}}/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "firstName": "aliison",
+  "lastName": "jones",
+  "dni": "12345671",
+  "birthday": "1993-03-03",
+  "gender": "FEMENINE",
+  "status": "MARRIED"
+}
+
+### Response
+# {
+#   "userCode": 1,
+#   "firstName": "allison",
+#   "lastName": "bryant",
+#   "dni": 12345678,
+#   "birthday": "1991-02-02T00:00:00.000Z",
+#   "gender": "FEMENINE",
+#   "status": "MARRIED",
+#   "deleted": false,
+#   "_id": "62f3af378b73e08e0a5b0ff6",
+#   "__v": 0
+# }
+
+### 4. get users
+GET {{endpoint}}/users
+Authorization: Bearer {{token}}
+
+### response
+# [
+#   {
+#     "_id": "62f3af378b73e08e0a5b0ff6",
+#     "userCode": 1,
+#     "firstName": "allison",
+#     "lastName": "bryant",
+#     "dni": 12345678,
+#     "birthday": "1991-02-02T00:00:00.000Z",
+#     "gender": "FEMENINE",
+#     "status": "MARRIED",
+#     "deleted": false
+#   },
+#   {
+#     "_id": "62f3af688b73e08e0a5b0ffb",
+#     "userCode": 2,
+#     "firstName": "john",
+#     "lastName": "doe",
+#     "dni": 12345679,
+#     "birthday": "1993-03-03T00:00:00.000Z",
+#     "gender": "FEMENINE",
+#     "status": "MARRIED",
+#     "deleted": false
+#   }
+# ]
+
+### 5. get user by dni
+GET {{endpoint}}/users/12345678
+Authorization: Bearer {{token}}
+### response
+# {
+#   "_id": "62f3af378b73e08e0a5b0ff6",
+#   "userCode": 1,
+#   "firstName": "allison",
+#   "lastName": "bryant",
+#   "dni": 12345678,
+#   "birthday": "1991-02-02T00:00:00.000Z",
+#   "gender": "FEMENINE",
+#   "status": "MARRIED",
+#   "deleted": false,
+#   "__v": 0
+# }
+
+### 6. soft delete user
+PATCH {{endpoint}}/users/1
+Authorization: Bearer {{token}}
+
+### response
+# {
+#   "_id": "62f3af378b73e08e0a5b0ff6",
+#   "userCode": 1,
+#   "firstName": "allison",
+#   "lastName": "bryant",
+#   "dni": 12345678,
+#   "birthday": "1991-02-02T00:00:00.000Z",
+#   "gender": "FEMENINE",
+#   "status": "MARRIED",
+#   "deleted": true,
+#   "__v": 0
+# }
+
+### 7. restore user
+PATCH {{endpoint}}/users/1/restore
+Authorization: Bearer {{token}}
+
+### response
+# {
+#   "_id": "62f3af378b73e08e0a5b0ff6",
+#   "userCode": 1,
+#   "firstName": "allison",
+#   "lastName": "bryant",
+#   "dni": 12345678,
+#   "birthday": "1991-02-02T00:00:00.000Z",
+#   "gender": "FEMENINE",
+#   "status": "MARRIED",
+#   "deleted": false,
+#   "__v": 0
+# }
+
+### 8. update user
+
+PUT {{endpoint}}/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "firstName": "Allison",
+  "lastName": "New lastName edited",
+  "dni": "12345678",
+  "birthday": "1993-03-03",
+  "gender": "FEMENINE",
+  "status": "MARRIED"
+}
+
+### response
+# {
+#   "_id": "62f3af378b73e08e0a5b0ff6",
+#   "userCode": 1,
+#   "firstName": "allison",
+#   "lastName": "new lastname edited",
+#   "dni": 12345678,
+#   "birthday": "1993-03-03T00:00:00.000Z",
+#   "gender": "FEMENINE",
+#   "status": "MARRIED",
+#   "deleted": false,
+#   "__v": 0
+# }
+
