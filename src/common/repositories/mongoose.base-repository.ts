@@ -15,7 +15,7 @@ export abstract class MongooseBaseRepository<T extends Document> {
     return this.model.find(filterQuery, { __v: 0 }, { lean: true });
   }
 
-  async create(createModelData: Omit<T, '_id'>): Promise<T> {
+  async create(createModelData: Partial<T>): Promise<T> {
     const model = new this.model(createModelData);
     return (await model.save()).toJSON() as unknown as T;
   }

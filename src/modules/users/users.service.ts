@@ -24,7 +24,7 @@ export class UsersService {
       ...userDto,
       dni: this.parseDni(userDto.dni),
       userCode: nUsers + 1,
-    } as any);
+    });
   }
 
   async getUsers(): Promise<User[]> {
