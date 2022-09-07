@@ -1,0 +1,11 @@
+OBJETIVO: Desarrollar un API REST usando Node.js con Express.js para la autenticación de una aplicación como también del mantenimiento de una tabla la cual deberá ser escalable.
+
+En esta evaluación de desarrollo se les solicitara:
+Usar base de datos en MongoBD
+Crea los endpoints de Perfil, Login de usuarios (Usuario y contraseña), con validación de autenticación JWT (Token)
+Crea los endpoints de un crud de mantenimiento (Crear, Editar y Eliminar) con los campos (Dni, Nombres y Apellidos, Fecha Nacimiento, genero, edad, estado).
+Dni: número de 8 dígitos.
+Fecha de nacimiento: formato fecha.
+Género : string Masculino o Femenino.
+Estado: string verdad o falso.
+Nota: Realizar pruebas del endpoint con Postman y enviar en un zip la fuente y los pantallazos del test.

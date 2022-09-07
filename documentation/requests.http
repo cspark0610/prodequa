@@ -1,7 +1,7 @@
 @endpoint=http://localhost:5500
 @email=test3@gmail.com
 @password=password3
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmYzYTFmMmMyZWU3ZmQ2OTYzZWU3MGIiLCJlbWFpbCI6InRlc3QzQGdtYWlsLmNvbSIsImlhdCI6MTY2MDEzMzk0NSwiZXhwIjoxNjYwMjIwMzQ1fQ.kFnl19Y83SyW5Um-n0sLiiYbK2yrix-tr-pqmnw7KUI
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmYzYTFmMmMyZWU3ZmQ2OTYzZWU3MGIiLCJlbWFpbCI6InRlc3QzQGdtYWlsLmNvbSIsImlhdCI6MTY2MDc2MzQwMSwiZXhwIjoxNjYwODQ5ODAxfQ.JjCdLmQrdhS4cXDJZZbXALMOU1XxjXvofH-LQQvA2-I
 
 
 ### 1. Signup

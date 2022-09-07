@@ -48,7 +48,7 @@ export class AuthService {
 
     if (!authRecord) throw new ForbiddenException('Access denied');
 
-    const passwordIsValid = await bcrypt.compare(
+    const passwordIsValid = bcrypt.compare(
       authDto.password,
       authRecord.password,
     );
